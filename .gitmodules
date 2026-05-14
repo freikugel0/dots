@@ -1,0 +1,15 @@
+[submodule "_builds/dwm"]
+	path = _builds/dwm
+	url = https://git.suckless.org/dwm
+[submodule "_builds/st"]
+	path = _builds/st
+	url = https://git.suckless.org/st
+[submodule "_builds/dmenu"]
+	path = _builds/dmenu
+	url = https://git.suckless.org/dmenu
+[submodule "_builds/slock"]
+	path = _builds/slock
+	url = https://git.suckless.org/slock
+[submodule "_builds/vim"]
+	path = _builds/vim
+	url = https://github.com/vim/vim

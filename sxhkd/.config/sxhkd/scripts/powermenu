@@ -1,0 +1,10 @@
+#!/bin/sh
+
+choice=$(printf "shutdown\nreboot\nlogout\nlock" | dmenu)
+
+case "$choice" in
+    shutdown) systemctl poweroff ;;
+    reboot) systemctl reboot ;;
+    logout) pkill dwm ;;
+    lock) slock ;;
+esac

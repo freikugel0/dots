@@ -1,0 +1,286 @@
+#
+# reload sxhkd
+#
+
+super + Escape
+    pkill -USR1 sxhkd
+
+#
+# general/applications
+#
+
+super + p
+    dmenu_run
+
+super + shift + Return
+    st
+
+super + shift + e
+    ~/.config/sxhkd/scripts/powermenu
+
+super + shift + x
+    slock -m "$(cowsay "$(fortune)")" 
+
+#
+# screenshots
+#
+
+Print
+    maim ~/pics/screenshot-$(date +%s).png
+
+shift + Print
+    maim -s ~/pics/screenshot-$(date +%s).png
+
+control + shift + Print
+    maim -s | xclip -selection clipboard -t image/png
+
+#
+# audio & brightness
+#
+
+XF86AudioRaiseVolume
+    wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
+
+XF86AudioLowerVolume
+    wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+
+XF86AudioMute
+    wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+
+XF86AudioMicMute
+    wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
+
+XF86MonBrightnessUp
+    brightnessctl set +5%
+
+XF86MonBrightnessDown
+    brightnessctl set 5%-
+
+#
+# media keys
+#
+
+XF86AudioPlay
+    playerctl play-pause
+
+XF86AudioNext
+    playerctl next
+
+XF86AudioPrev
+    playerctl previous
+
+#
+# dwm focus
+#
+
+super + j
+    dwm-msg run_command focusstack 1
+
+super + k
+    dwm-msg run_command focusstack -1
+
+super + Return
+    dwm-msg run_command zoom
+
+super + shift + c
+    dwm-msg run_command killclient
+
+
+#
+# master area
+#
+
+super + i
+    dwm-msg run_command incnmaster 1
+
+super + d
+    dwm-msg run_command incnmaster -1
+
+super + h
+    dwm-msg run_command setmfact -0.05
+
+super + l
+    dwm-msg run_command setmfact 0.05
+
+
+#
+# layouts
+#
+
+super + t
+    dwm-msg run_command setlayoutipc 0
+
+super + f
+    dwm-msg run_command setlayoutipc 1
+
+super + m
+    dwm-msg run_command setlayoutipc 2
+
+super + shift + space
+    dwm-msg run_command togglefloating
+    
+super + shift + f
+    dwm-msg run_command togglefullscr
+
+#
+# bar
+#
+
+super + b
+    dwm-msg run_command togglebar
+
+
+#
+# monitor controls
+#
+
+super + comma
+    dwm-msg run_command focusmon -1
+
+super + period
+    dwm-msg run_command focusmon 1
+
+super + shift + comma
+    dwm-msg run_command tagmon -1
+
+super + shift + period
+    dwm-msg run_command tagmon 1
+
+
+#
+# workspaces
+#
+
+super + 1
+    dwm-msg run_command viewex 0
+
+super + 2
+    dwm-msg run_command viewex 1
+
+super + 3
+    dwm-msg run_command viewex 2
+
+super + 4
+    dwm-msg run_command viewex 3
+
+super + 5
+    dwm-msg run_command viewex 4
+
+super + 6
+    dwm-msg run_command viewex 5
+
+super + 7
+    dwm-msg run_command viewex 6
+
+super + 8
+    dwm-msg run_command viewex 7
+
+super + 9
+    dwm-msg run_command viewex 8
+
+
+#
+# move client to workspace
+#
+
+super + shift + 1
+    dwm-msg run_command tagex 0
+
+super + shift + 2
+    dwm-msg run_command tagex 1
+
+super + shift + 3
+    dwm-msg run_command tagex 2
+
+super + shift + 4
+    dwm-msg run_command tagex 3
+
+super + shift + 5
+    dwm-msg run_command tagex 4
+
+super + shift + 6
+    dwm-msg run_command tagex 5
+
+super + shift + 7
+    dwm-msg run_command tagex 6
+
+super + shift + 8
+    dwm-msg run_command tagex 7
+
+super + shift + 9
+    dwm-msg run_command tagex 8
+
+
+#
+# toggle workspace visibility
+#
+
+super + control + 1
+    dwm-msg run_command toggleviewex 0
+
+super + control + 2
+    dwm-msg run_command toggleviewex 1
+
+super + control + 3
+    dwm-msg run_command toggleviewex 2
+
+super + control + 4
+    dwm-msg run_command toggleviewex 3
+
+super + control + 5
+    dwm-msg run_command toggleviewex 4
+
+super + control + 6
+    dwm-msg run_command toggleviewex 5
+
+super + control + 7
+    dwm-msg run_command toggleviewex 6
+
+super + control + 8
+    dwm-msg run_command toggleviewex 7
+
+super + control + 9
+    dwm-msg run_command toggleviewex 8
+
+
+#
+# toggle client tag
+#
+
+super + control + shift + 1
+    dwm-msg run_command toggletagex 0
+
+super + control + shift + 2
+    dwm-msg run_command toggletagex 1
+
+super + control + shift + 3
+    dwm-msg run_command toggletagex 2
+
+super + control + shift + 4
+    dwm-msg run_command toggletagex 3
+
+super + control + shift + 5
+    dwm-msg run_command toggletagex 4
+
+super + control + shift + 6
+    dwm-msg run_command toggletagex 5
+
+super + control + shift + 7
+    dwm-msg run_command toggletagex 6
+
+super + control + shift + 8
+    dwm-msg run_command toggletagex 7
+
+super + control + shift + 9
+    dwm-msg run_command toggletagex 8
+
+
+#
+# session
+#
+
+super + shift + q
+    dwm-msg run_command quit 0
+
+super + shift + r
+    dwm-msg run_command quit 1
