@@ -21,6 +21,7 @@ dunst &
 nm-applet &
 lxqt-policykit-agent &
 udiskie &
+~/.screenlayout &
 ~/.fehbg &
 
 # Start dwm inside dbus session
