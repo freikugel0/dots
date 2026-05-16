@@ -6,14 +6,16 @@
 # Keyboard mappings
 [ -f ~/.Xmodmap ] && xmodmap ~/.Xmodmap
 
-# Cursor
-xsetroot -cursor_name cross
-
 # Better Java UI compatibility
 export _JAVA_AWT_WM_NONREPARENTING=1
 
-# GTK theme consistency
-export GTK_THEME=Adwaita:dark
+# Desktop/session identity
+export XDG_CURRENT_DESKTOP=dwm
+export XDG_SESSION_DESKTOP=dwm
+
+# Sync env to systemd user session
+systemctl --user import-environment DISPLAY XAUTHORITY XDG_CURRENT_DESKTOP XDG_SESSION_DESKTOP
+dbus-update-activation-environment --systemd DISPLAY XAUTHORITY XDG_CURRENT_DESKTOP XDG_SESSION_DESKTOP
 
 # Start background services
 sxhkd &
@@ -24,5 +26,5 @@ udiskie &
 ~/.screenlayout &
 ~/.fehbg &
 
-# Start dwm inside dbus session
+# Start dwm
 exec systemd-cat --identifier=dwm dbus-run-session dwm
