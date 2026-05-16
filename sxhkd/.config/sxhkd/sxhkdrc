@@ -122,6 +122,9 @@ super + shift + space
 super + shift + f
     dwm-msg run_command togglefullscr
 
+super + x
+    dwm-msg run_command movecenter
+
 #
 # bar
 #
