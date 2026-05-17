@@ -2,3 +2,6 @@ Xft.antialias: true
 Xft.hinting: true
 Xft.hintstyle: hintslight
 Xft.rgba: rgb
+
+Xcursor.theme: GoogleDot-Black
+Xcursor.size: 32
