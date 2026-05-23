@@ -1,0 +1,7 @@
+[filechooser]
+cmd=/usr/share/xdg-desktop-portal-termfilechooser/yazi-wrapper.sh
+default_dir=$HOME
+; env=TERMCMD=st -e
+
+open_mode=suggested
+save_mode=suggested
