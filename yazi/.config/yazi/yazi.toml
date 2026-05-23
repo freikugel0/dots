@@ -1,0 +1,8 @@
+[mgr]
+linemode = "size"
+show_hidden = true
+mouse_events = []
+
+[preview]
+wrap = "yes"
+tab_size = 2
