@@ -108,3 +108,20 @@ alias slock='slock -m "$(fortune | cowsay)"'
 tmux() {
     TERM=xterm-kitty command tmux "$@"
 }
+
+y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	command yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
+	command rm -f -- "$tmp"
+}
+
+unlock-sata() {
+    local DEV="/dev/disk/by-partlabel/cryptpersonal"
+    local MAP="personal"
+    local MNT="/mnt/personal"
+
+    doas cryptsetup open "$DEV" "$MAP" || return
+    doas mount "/dev/mapper/$MAP" "$MNT"
+}
