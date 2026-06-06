@@ -5,3 +5,7 @@ run = "shell -- dragon-drop -x -T %*"
 [[mgr.prepend_keymap]]
 on  = "q"
 run = "plugin confirm-quit"
+
+[[mgr.prepend_keymap]]
+on  = "y"
+run = [ "shell -- echo %s | xclip -i -selection clipboard -t text/uri-list", "yank" ]
