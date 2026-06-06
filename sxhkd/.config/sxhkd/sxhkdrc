@@ -125,6 +125,57 @@ super + shift + f
 super + x
     dwm-msg run_command movecenter
 
+
+#
+# move floating
+#
+
+super + shift + j
+    dwm-msg run_command moveresize "0x 25y 0w 0h"
+
+super + shift + k
+    dwm-msg run_command moveresize "0x -25y 0w 0h"
+
+super + shift + l
+    dwm-msg run_command moveresize "25x 0y 0w 0h"
+
+super + shift + h
+    dwm-msg run_command moveresize "-25x 0y 0w 0h"
+
+
+#
+# resize floating
+#
+
+super + ctrl + j
+    dwm-msg run_command moveresize "0x 0y 0w 25h"
+
+super + ctrl + k
+    dwm-msg run_command moveresize "0x 0y 0w -25h"
+
+super + ctrl + l
+    dwm-msg run_command moveresize "0x 0y 25w 0h"
+
+super + ctrl + h
+    dwm-msg run_command moveresize "0x 0y -25w 0h"
+
+
+#
+# move floating to edge
+#
+
+super + shift + ctrl + k
+    dwm-msg run_command moveresizeedge "t"
+
+super + shift + ctrl + j
+    dwm-msg run_command moveresizeedge "b"
+
+super + shift + ctrl + h
+    dwm-msg run_command moveresizeedge "l"
+
+super + shift + ctrl + l
+    dwm-msg run_command moveresizeedge "r"
+
 #
 # bar
 #
